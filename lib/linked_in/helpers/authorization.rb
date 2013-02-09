@@ -26,7 +26,8 @@ module LinkedIn
       #                                  "http://#{request.host_with_port}/test/callback"},
       #    :scope => 'r_contactinfo r_network')
       def request_token(options={}, *arguments, &block)
-        @request_token ||= consumer.get_request_token(options={}, *arguments, &block)
+        # TODO: figure out how to call the following properly
+        @request_token ||= consumer.get_request_token(options, *arguments, &block)
       end
 
       # For web apps use params[:oauth_verifier], for desktop apps,
